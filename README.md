@@ -132,7 +132,7 @@ Security-focused work involving dependency auditing, vulnerability remediation, 
 ### Experience
 
 **Full Stack Developer — AIKING Software Solutions**
-`June 2026 – Present`
+`June 2026 – Present . Pune`
 
 * Own two production platforms end-to-end (solo): an AI voice pipeline for banking calls and a bulk SMS platform for logistics
 * Built a real-time AI voice pipeline using **Twilio Media Streams** and **Google Gemini Live API** — 300+ calls/day at 3s average connect latency
