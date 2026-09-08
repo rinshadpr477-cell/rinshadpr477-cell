@@ -134,12 +134,19 @@ Security-focused work involving dependency auditing, vulnerability remediation, 
 **Full Stack Developer — AIKING Software Solutions**
 `June 2026 – Present`
 
-Own two production platforms end-to-end (solo): a real-time AI voice pipeline for banking calls (Twilio + Gemini Live API) and a CSV-driven bulk SMS platform for logistics. Designed Redis/BullMQ job queues, RBAC auth, and Razorpay billing; containerized and deployed to AWS EC2 with NGINX and GitHub Actions CI/CD.
+* Own two production platforms end-to-end (solo): an AI voice pipeline for banking calls and a bulk SMS platform for logistics
+* Built a real-time AI voice pipeline using **Twilio Media Streams** and **Google Gemini Live API** — 300+ calls/day at 3s average connect latency
+* Built a CSV-driven bulk SMS system with personalization, batching, and idempotent retries — 15,000+ messages/campaign, 98.5% delivery success, zero duplicates
+* Designed **Redis + BullMQ** job queues and RBAC auth across both platforms; integrated Razorpay billing (1,000+ transactions/month)
+* Containerized and deployed to **AWS EC2** with NGINX and GitHub Actions CI/CD, cutting deploy time to 8 minutes; Jest-tested
 
 **Full Stack Developer Intern — Luminar Technolab**
 `Sep 2025 – June 2026 · Kerala`
 
-Independently shipped 10+ full-stack apps end-to-end, several with real-time features. Designed RESTful APIs and schemas for a service marketplace platform with Razorpay integration, and owned deployment — Dockerized services, NGINX/SSL, CI/CD pipelines.
+* Independently shipped 10+ full-stack apps end-to-end, several with real-time features, across 6 internal/client use cases
+* Engineered JWT/OAuth authentication with role-based access control across shipped apps
+* Designed RESTful APIs and schemas for a service marketplace platform with Razorpay integration (500+ concurrent users)
+* Owned deployment — Dockerized services, NGINX/SSL, CI/CD pipelines cutting release time by 40%
 
 ---
 
