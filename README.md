@@ -1,159 +1,113 @@
 # RINSHAD PR
+**Software Engineer · Real-Time, Distributed & AI Systems**
 
-**Software Engineer · Full-Stack Developer · Real-Time & AI Systems**
+Software engineer with professional experience delivering production systems for banking and logistics clients[cite: 1]. Core focus on **Java 21 / Spring Boot 3**, **TypeScript / Node.js**, **Apache Kafka**, **PostgreSQL**, distributed transaction patterns, and applied AI (multi-agent systems, RAG pipelines)[cite: 1].
 
-I build scalable web applications, real-time systems, and production-ready software with a focus on clean architecture, reliability, and developer experience.
-
-Currently focused on **Next.js, TypeScript, Node.js, PostgreSQL, real-time/job-queue architectures, and applied AI (RAG, multi-agent systems).**
+[LinkedIn](https://linkedin.com/in/rinshadpr477-cell) · [GitHub](https://github.com/rinshadpr477-cell) · [Portfolio](https://portfolio-rinshad.vercel.app/) · [Email](mailto:rinshadpr477@gmail.com)[cite: 1]
 
 ---
 
 ### Tech Stack
 
-**Languages**
-`JavaScript` `TypeScript` `Python` `Java` `SQL`
-
-**Frontend**
-`React` `Next.js` `Redux` `React Router` `React Hook Form` `Tailwind CSS` `Bootstrap`
-
-**Backend**
-`Node.js` `Express.js` `REST APIs` `WebSocket / Real-Time Streaming` `JWT` `OAuth 2.0` `RBAC` `Bcrypt`
-
-**Databases**
-`MongoDB` `Mongoose` `PostgreSQL` `Prisma`
-
-**Real-Time & AI**
-`Twilio Media Streams` `Gemini Live API` `Redis` `BullMQ` `Background Workers` `RAG Pipelines` `Qdrant` `Multi-Agent Systems` `Hugging Face` `Sentence-Transformers` `Prompt Engineering`
-
-**Cloud & DevOps**
-`Docker` `Docker Compose` `AWS EC2` `AWS IAM` `NGINX` `SSL/TLS` `GitHub Actions` `CI/CD`
-
-**Testing & Tools**
-`Jest` `Git` `GitHub` `Postman`
+- **Languages:** Java (11/17/21), TypeScript, JavaScript (ES6+), Python, SQL[cite: 1]
+- **Backend & Distributed Systems:** Spring Boot 3, Spring Data JPA, Hibernate, Node.js, Express.js, FastAPI, RESTful APIs, Microservices, Dependency Injection, SOLID Principles, WebSocket, JWT, OAuth 2.0, RBAC, Razorpay Integration[cite: 1]
+- **Messaging & Real-Time:** Apache Kafka (KRaft), Transactional Outbox Pattern, Dead-Letter Queues (DLQ), Idempotent Consumers, Redis, BullMQ, Background Workers, Twilio Voice API & Media Streams, Google Gemini Live API[cite: 1]
+- **Databases & Persistence:** PostgreSQL, MongoDB, Mongoose, Prisma ORM, Flyway, Indexing Strategies, Avoiding N+1 Queries, Schema Design, Batch Processing[cite: 1]
+- **AI & ML Engineering:** Multi-Agent Systems, RAG Pipelines, Vector Databases (Qdrant), LLM Orchestration, Hugging Face, Sentence-Transformers, Evaluation Harnesses, Prompt Engineering[cite: 1]
+- **DevOps, Cloud & Tooling:** Docker, Docker Compose, AWS EC2, AWS IAM, NGINX, SSL/TLS, GitHub Actions (CI/CD), Git, GitHub Copilot[cite: 1]
+- **Testing:** JUnit 5, Mockito, Jest, Unit Testing, Jacoco[cite: 1]
 
 ---
 
 ### Featured Engineering Work
 
-#### 01 — Groundcrew — Autonomous RAG + Multi-Agent GitHub Issue Triage
+#### 01 — Enterprise Bank Communication & Collections Platform
+Distributed, event-driven banking communication and recovery platform engineered on Spring Boot 3, Apache Kafka, and PostgreSQL for financial-grade reliability[cite: 1].
+`Java 21` `Spring Boot 3` `PostgreSQL 16` `Apache Kafka (KRaft)` `Transactional Outbox` `Flyway` `Docker` `JUnit 5`[cite: 1]
 
-Production-style RAG + multi-agent pipeline that triages real GitHub issues end-to-end: classifies, retrieves similar past issues via semantic search, drafts a grounded reply, and runs it through a critic agent that catches unsupported claims before anything reaches a human.
+- **Transactional Outbox & Idempotency:** Implemented an autonomous lock-free publisher (`FOR UPDATE SKIP LOCKED`) combined with consumer-side idempotency (`processed_events`) to eliminate dual-write hazards and guarantee exactly-once processing across 1,000+ simulated events[cite: 1].
+- **Resilient Recovery Queues:** Built an automated multi-channel debt collections workflow leveraging exponential-backoff retries and Dead Letter Queues (DLQ) so failing notifications are isolated without message loss[cite: 1].
+- **Concurrency & Compliance:** Leveraged PostgreSQL row-level locks for concurrent batch scheduling, PII masking (`CustomerMapper`), immutable audit logging (`audit_records`), and strict `BigDecimal` / `NUMERIC(19,4)` precision to prevent rounding discrepancies.
+- **Security & Quality:** Secured with stateless JWT role-based access control (RBAC), Flyway-versioned database migrations, and a comprehensive JUnit 5/Mockito test suite achieving 70%+ coverage[cite: 1].
 
-`Next.js` `TypeScript` `FastAPI` `PostgreSQL` `Qdrant` `Sentence-Transformers` `Hugging Face` `Ollama` `Docker` `GitHub Actions`
-
-* Evaluated against **5,318 real issues** from a popular open-source repo — 3,181 embedded and indexed
-* Critic-agent revision loop reaches **96.7% auto-approval** (29/30), with unverifiable drafts escalated to human review instead of shipped
-* CI-gated eval harness enforces a **0.82 retrieval-relevance baseline** on every push, failing the build on regression
-* Router classification accuracy: **72.5%** against real GitHub labels; API load-tested at 15.4 req/s with 0 errors
-* Pluggable local (Ollama, free) or hosted (Hugging Face) LLM backend — runs at **$0 inference cost**
-
-[View Repository →](https://github.com/rinshadpr477-cell/groundcrew)
+[View Repository →](https://github.com/rinshadpr477-cell/Enterprise-Bank-Communication-Platform)
 
 ---
 
-#### 02 — Bank AI Calling Platform
+#### 02 — Groundcrew — Autonomous RAG + Multi-Agent GitHub Issue Triage
+Production-style RAG and multi-agent system (router, retriever, draft generator, critic) automating end-to-end issue classification and grounded resolution drafts[cite: 1].
+`Next.js` `TypeScript` `FastAPI` `PostgreSQL` `Qdrant` `Sentence-Transformers` `Hugging Face` `Ollama` `Docker` `GitHub Actions`[cite: 1]
 
-Real-time AI-powered outbound calling platform for a banking client, live in production.
+- **High-Volume Retrieval:** Indexed and embedded 3,181 issues across a dataset of 5,318 real GitHub issues using Qdrant vector search[cite: 1].
+- **Self-Refining Critic Loop:** Built an automated critic-agent revision loop achieving 96.7% auto-approval (29/30), escalating unverifiable claims directly to human review[cite: 1].
+- **CI-Gated Evaluation:** Enforced a 72.5% router accuracy baseline and a 0.82 retrieval-relevance threshold on every commit via GitHub Actions to prevent prompt and model regressions[cite: 1].
+- **Zero-Cost Inference:** Pluggable local (Ollama) or hosted (Hugging Face) LLM backends running at $0 inference cost.
 
-`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Redis` `BullMQ` `Twilio` `Gemini Live API` `Docker` `AWS`
+[View Repository →](https://github.com/rinshadpr477-cell)
 
-* Built a real-time voice pipeline using **Twilio Media Streams** and **Google Gemini Live API** — 300+ calls/day, 82% call-answer rate
-* Cut call-connect latency from 5s to 2.9s
-* Designed **Redis + BullMQ** call-orchestration queues with RBAC auth and Razorpay billing — 1,000 transactions/month at 97% success
-* Containerized and deployed on **AWS EC2** with NGINX, SSL/TLS, and GitHub Actions CI/CD
-* Jest test coverage cut production incidents by 15% over 3 months
+---
+
+#### 03 — Bank AI Calling Platform
+Live outbound AI-powered voice calling SaaS built for a banking client[cite: 1].
+`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Redis` `BullMQ` `Twilio Media Streams` `Gemini Live API` `Docker` `AWS EC2`[cite: 1]
+
+- **Voice Pipeline Optimization:** Built bidirectional real-time audio streams using Twilio Media Streams and Gemini Live API, cutting connection latency from 5s down to 2.9s across 300+ calls/day (82% answer rate)[cite: 1].
+- **Queue Orchestration & Billing:** Engineered Redis and BullMQ job queues, RBAC authorization, and Razorpay subscription billing handling 1,000+ transactions/month at 97% success[cite: 1].
+- **Deployment & Reliability:** Deployed to AWS EC2 using Docker, NGINX reverse proxying, and automated GitHub Actions CI/CD; added Jest coverage to reduce production incidents[cite: 1].
 
 [View Repository →](https://github.com/rinshadpr477-cell/bank-ai-calling-platform)
 
 ---
 
-#### 03 — AI Startup Guide
+#### 04 — AI Startup Guide
+Full-stack AI-driven discovery engine for evaluating startup market viability and opportunities[cite: 1].
+`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Gemini API`
 
-AI-powered application for exploring and analyzing startup opportunities.
-
-`Next.js` `TypeScript` `PostgreSQL` `Prisma` `Gemini`
-
-* Built an AI-assisted startup discovery workflow
-* Implemented full-stack application and database interactions
-* Integrated AI capabilities into the application workflow
+- Developed structured discovery workflows integrating Gemini AI with interactive querying.
+- Implemented persistent database schemas and server actions using Prisma ORM.
 
 [View Repository →](https://github.com/rinshadpr477-cell/AI-STARTUP-GUIDE)
 
 ---
 
-#### 04 — AI Refund Agent
-
-AI-powered application focused on automating refund-related workflows.
-
-`AI` `Next.js` `TypeScript` `Node.js`
-
-* Designed an automated AI-driven refund workflow
-* Integrated backend services with application logic
-* Focused on workflow automation and reducing manual processing
-
-[View Repository →](https://github.com/rinshadpr477-cell/AI-REFUND-AGENT)
-
----
-
 #### 05 — LaundryNear
+Full-stack on-demand service marketplace linking customers, local vendors, and logistics drivers[cite: 1].
+`React.js` `Node.js` `Express.js` `MongoDB` `Mongoose` `JWT` `Razorpay`
 
-Full-stack service platform connecting customers, laundry shops, delivery agents, and administrators.
+- Modeled 6+ normalized Mongoose collections and optimized queries with strategic database indexing.
+- Engineered role-based JWT middleware and Razorpay payment verification with automated webhooks.
 
-`React.js` `Node.js` `Express.js` `MongoDB` `JWT` `Razorpay`
-
-* Designed and integrated RESTful APIs
-* Optimized MongoDB schemas for efficient data storage and retrieval
-* Implemented JWT authentication and role-based middleware
-* Integrated Razorpay payment processing with transaction verification
-* Designed and modeled **6+ MongoDB collections** using Mongoose
-* Deployed frontend on **Vercel** and backend on **Render**
-
-[View Repository →](https://github.com/rinshadpr477-cell/LaundryNear-Frontend)
+[View Repository →](https://github.com/rinshadpr477-cell)
 
 ---
 
-### Security & DevOps
+### Professional Experience
 
-#### NPM Dependency Security
+**Associate Software Engineer — AIKING Software Solutions**  
+*June 2026 – Present · Pune*[cite: 1]
+- Engineered two production platforms alongside a team of 5 developers, 1 senior developer, and 2 DevOps engineers: an AI voice calling platform (banking) and a bulk SMS platform (logistics)[cite: 1].
+- Contributed to a real-time voice pipeline (Twilio Media Streams + Gemini Live API) serving 300+ calls/day at ~3s connect latency[cite: 1].
+- Developed the backend for a CSV-driven bulk SMS platform featuring template personalization, batching, and idempotent retries (15,000+ messages/campaign at 98.5% delivery success, zero duplicates)[cite: 1].
+- Built Redis/BullMQ job queues, RBAC auth middleware, Razorpay billing integrations, and PostgreSQL/Prisma schemas[cite: 1].
+- Containerized microservices with Docker, configured NGINX reverse proxies, and automated builds using GitHub Actions CI/CD to AWS EC2[cite: 1].
 
-Security-focused work involving dependency auditing, vulnerability remediation, testing, and production build validation.
-
-`Next.js` `npm` `Prisma` `Jest` `GitHub Actions`
-
-* Audited project dependencies for security vulnerabilities
-* Resolved vulnerable packages and dependency issues
-* Validated Prisma client generation and production builds
-* Executed automated tests after dependency changes
-
-[View Repository →](https://github.com/rinshadpr477-cell/NPM_dependency)
-
----
-
-### Experience
-
-**Full Stack Developer — AIKING Software Solutions**
-`June 2026 – Present . Pune`
-
-* Own two production platforms end-to-end (solo): an AI voice pipeline for banking calls and a bulk SMS platform for logistics
-* Built a real-time AI voice pipeline using **Twilio Media Streams** and **Google Gemini Live API** — 300+ calls/day at 3s average connect latency
-* Built a CSV-driven bulk SMS system with personalization, batching, and idempotent retries — 15,000+ messages/campaign, 98.5% delivery success, zero duplicates
-* Designed **Redis + BullMQ** job queues and RBAC auth across both platforms; integrated Razorpay billing (1,000+ transactions/month)
-* Containerized and deployed to **AWS EC2** with NGINX and GitHub Actions CI/CD, cutting deploy time to 8 minutes; Jest-tested
-
-**Full Stack Developer Intern — Luminar Technolab**
-`Sep 2025 – June 2026 · Kerala`
-
-* Independently shipped 10+ full-stack apps end-to-end, several with real-time features, across 6 internal/client use cases
-* Engineered JWT/OAuth authentication with role-based access control across shipped apps
-* Designed RESTful APIs and schemas for a service marketplace platform with Razorpay integration (500+ concurrent users)
-* Owned deployment — Dockerized services, NGINX/SSL, CI/CD pipelines cutting release time by 40%
+**Full Stack Developer (MERN) — Luminar Technolab**  
+*September 2025 – June 2026 · Kerala*[cite: 1]
+- Built and shipped 10+ full-stack web applications on the MERN stack with mentors and teammates, incorporating real-time communication and clean architecture[cite: 1].
+- Designed RESTful APIs and schemas for a service marketplace platform supporting 500+ registered users and Razorpay checkout[cite: 1].
+- Engineered JWT and OAuth authentication flows with granular role-based access control[cite: 1].
+- Deployed production services using Docker, NGINX with SSL/TLS termination, and CI/CD automation pipelines[cite: 1].
 
 ---
 
-### Connect
+### Education
 
-[LinkedIn](https://www.linkedin.com/in/rinshadpr477-cell/) · [GitHub](https://github.com/rinshadpr477-cell) · [Portfolio](https://portfolio-rinshad.vercel.app/) · [Email](mailto:rinshadpr477@gmail.com)
+**B.Tech in Computer Science and Engineering**  
+*Visvesvaraya Technological University (2021 – 2025) · Bangalore, India*[cite: 1]
+- **Relevant Coursework:** Object-Oriented Programming (Java), Data Structures & Algorithms, Database Management Systems (RDBMS/SQL, Distributed DBs), Operating Systems[cite: 1].
 
 ---
 
-<sub>Building systems. Learning continuously. Shipping consistently.</sub>
+<p align="center">
+  <sub>Clean Code · Event-Driven Architecture · Resilient Distributed Systems</sub>
+</p>
